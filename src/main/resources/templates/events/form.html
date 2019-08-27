@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/eventsModelView}" method="post" th:object="${event}">
+
+    <p th:if=${#fields.hasErrors('limit')} th:errors="*{limit}"></p>
+    <p th:if=${#fields.hasErrors('name')} th:errors="*{name}"></p>
+    <input type="text" name="name" th:field="*{name}" />
+    <input type="text" name="limit" th:field="*{limit}" />
+    <input type="submit" value="Create" />
+</form>
+
+</body>
+</html>
